@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Members & Relations</title>
+  <link rel="stylesheet" href="css/stylesMembers.css">
+</head>
+<body>
+  <main class="members-page">
+    <h1>Members & Relations</h1>
+
+    <div class="graph-container">
+      <!-- Groupe principal -->
+      <div class="node group">pas’smo</div>
+
+      <!-- Membres -->
+      <div class="node racine">Rac?ne</div>
+      <div class="node piccgio">PICCGIO</div>
+      <div class="node thoiry">Thoiry</div>
+
+      <!-- Groupes secondaires -->
+      <div class="node raw">RAW tape</div>
+      <div class="node reignm">POPULAR REIGNM</div>
+
+      <!-- Lignes entre les noeuds -->
+      <svg class="graph-lines">
+        <!-- pas’smo vers membres -->
+        <line x1="50%" y1="20%" x2="20%" y2="50%" />
+        <line x1="50%" y1="20%" x2="50%" y2="80%" />
+        <line x1="50%" y1="20%" x2="80%" y2="50%" />
+
+        <!-- PICCGIO + Thoiry = RAW tape -->
+        <line x1="50%" y1="80%" x2="80%" y2="50%" />
+        <line x1="65%" y1="65%" x2="80%" y2="90%" />
+
+        <!-- PICCGIO + Rac?ne = REIGNM -->
+        <line x1="50%" y1="80%" x2="20%" y2="50%" />
+        <line x1="35%" y1="65%" x2="20%" y2="90%" />
+      </svg>
+    </div>
+
+    <!-- Bouton retour modifié -->
+    <a href="passmo_index (4).html" class="back-button"><strong>Retour</strong></a>
+  </main>
+</body>
+</html>
