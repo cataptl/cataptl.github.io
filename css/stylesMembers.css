@@ -1,0 +1,45 @@
+.members-page {
+  text-align: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.graph-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 2rem auto;
+}
+
+.node {
+  position: absolute;
+  padding: 10px 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+
+/* Positions des bulles */
+.group   { top: 20%; left: 50%; }
+.racine  { top: 50%; left: 20%; }
+.piccgio { top: 80%; left: 50%; }
+.thoiry  { top: 50%; left: 80%; }
+.raw     { top: 90%; left: 80%; font-size: 0.9rem; }
+.reignm  { top: 90%; left: 20%; font-size: 0.9rem; }
+
+.graph-lines {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+.graph-lines line {
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 2;
+}

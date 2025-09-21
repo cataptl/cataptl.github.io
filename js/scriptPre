@@ -1,0 +1,109 @@
+// -------------------------------
+// Gestion des pages About, Archives et Members
+// -------------------------------
+const pages = {
+  about: document.getElementById('aboutPage'),
+  archives: document.getElementById('archivesPage'),
+  members: document.getElementById('membersPage')
+};
+
+const buttons = {
+  about: document.getElementById('aboutBtn'),
+  archives: document.getElementById('archivesBtn'),
+  members: document.getElementById('membersBtn')
+};
+
+const closes = {
+  about: document.getElementById('closeAbout'),
+  archives: document.getElementById('closeArchives'),
+  members: document.getElementById('closeMembers')
+};
+
+// Fonction pour afficher une page et cacher les autres
+function showPage(pageKey) {
+  for (const key in pages) {
+    pages[key].style.display = key === pageKey ? 'block' : 'none';
+  }
+}
+
+// Événements des boutons
+buttons.about.addEventListener('click', () => showPage('about'));
+buttons.archives.addEventListener('click', () => showPage('archives'));
+buttons.members.addEventListener('click', () => showPage('members'));
+
+// Événements des boutons de fermeture
+closes.about.addEventListener('click', () => pages.about.style.display = 'none');
+closes.archives.addEventListener('click', () => pages.archives.style.display = 'none');
+closes.members.addEventListener('click', () => pages.members.style.display = 'none');
+
+// -------------------------------
+// Redirection vers developer.html pour la combinaison C+A+T+P+L
+// -------------------------------
+let keysPressed = {};
+window.addEventListener('keydown', e => {
+  keysPressed[e.key.toLowerCase()] = true;
+  if (['c','a','t','p','l'].every(k => keysPressed[k])) {
+    window.location.href = 'developer.html';
+  }
+});
+
+window.addEventListener('keyup', e => {
+  keysPressed[e.key.toLowerCase()] = false;
+});
+
+// -------------------------------
+// Animation des cellules sur molette (scroll bloqué)
+// -------------------------------
+const nodes = {
+  vis: document.querySelector('.node-vis'),
+  av: document.querySelector('.node-av'),
+  mu: document.querySelector('.node-mu')
+};
+
+const initialPositions = {
+  vis: { top: 8, left: 71, scale: 1 },
+  av:  { top: 71, left: 8, scale: 1 },
+  mu:  { top: 87, left: 87, scale: 1 }
+};
+
+const targetPosition = { top: 5, left: 5 }; // cellule principale ne change plus de taille
+
+// Valeur interne pour simuler le "scroll"
+let simulatedScroll = 0;
+
+window.addEventListener('wheel', e => {
+  e.preventDefault(); // bloque le scroll de la page
+
+  // Ajuster simulatedScroll avec la molette
+  simulatedScroll += e.deltaY * 0.01; // sensibilité
+  simulatedScroll = Math.max(0, Math.min(1, simulatedScroll)); // clamp entre 0 et 1
+
+  // Cellule principale vis (plus d'agrandissement)
+  nodes.vis.style.top  = `${initialPositions.vis.top + (targetPosition.top - initialPositions.vis.top) * simulatedScroll}%`;
+  nodes.vis.style.left = `${initialPositions.vis.left + (targetPosition.left - initialPositions.vis.left) * simulatedScroll}%`;
+  nodes.vis.style.transform = `translate(-50%, -50%)`;
+
+  // Les autres cellules disparaissent progressivement
+  nodes.av.style.transform = `translate(-50%, -50%) scale(${initialPositions.av.scale * (1 - simulatedScroll)})`;
+  nodes.av.style.opacity = `${1 - simulatedScroll}`;
+  
+  nodes.mu.style.transform = `translate(-50%, -50%) scale(${initialPositions.mu.scale * (1 - simulatedScroll)})`;
+  nodes.mu.style.opacity = `${1 - simulatedScroll}`;
+}, { passive: false });
+
+// -------------------------------
+// Initialiser les positions au chargement
+// -------------------------------
+nodes.vis.style.top = initialPositions.vis.top + '%';
+nodes.vis.style.left = initialPositions.vis.left + '%';
+nodes.vis.style.transform = 'translate(-50%, -50%)';
+
+nodes.av.style.top = initialPositions.av.top + '%';
+nodes.av.style.left = initialPositions.av.left + '%';
+nodes.av.style.transform = 'translate(-50%, -50%) scale(1)';
+nodes.av.style.opacity = '1';
+
+nodes.mu.style.top = initialPositions.mu.top + '%';
+nodes.mu.style.left = initialPositions.mu.left + '%';
+nodes.mu.style.transform = 'translate(-50%, -50%) scale(1)';
+nodes.mu.style.opacity = '1';
