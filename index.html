@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>pas'smo — passmo.net</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = "indexPhone.html";
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="pas’smo" />
+        <!-- <div class="brand">pas'smo</div> -->
+      </div>
+
+      <div class="topmenus">
+        <div class="menu">
+          <button id="membersBtn">Members</button>
+        </div>
+        <div class="menu">
+          <button id="archivesBtn">Archives</button>
+        </div>
+        <div class="menu">
+          <button id="aboutBtn">About</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero" id="hero">
+        <div class="circle-wrap" id="circleWrap" aria-hidden="false">
+          <div class="logo-node node-vis" data-link="https://popularreignm.com" title="Visuels">
+            <img src="images/visual.png" alt="visuels" />
+          </div>
+          <div class="logo-node node-av" data-link="https://tis.com" title="A/V">
+            <img src="images/AV.png" alt="A/V" />
+          </div>
+          <div class="logo-node node-mu" data-link="https://thoiry.church" title="Musique">
+            <img src="images/music.png" alt="Musique" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>© pas'smo — passmo.net</footer>
+  </div>
+
+  <div class="about-page" id="aboutPage">
+    <h1>À propos de pas'smo</h1>
+    <p>Bio de l'entreprise à compléter...</p>
+    <hr />
+    <h2>Dernières informations</h2>
+    <p>News et mises à jour à compléter...</p>
+    <div id="closeAbout" class="return-btn"><strong>Retour</strong></div>
+  </div>
+
+  <div class="archives-page" id="archivesPage">
+    <h1>Archives des projets</h1>
+    <p>Aucun projet pour le moment...</p>
+    <div id="closeArchives" class="return-btn"><strong>Retour</strong></div>
+  </div>
+
+  <div class="members-page" id="membersPage">
+    <h1>Membres et relations</h1>
+    <p>Ici apparaîtront les membres et leurs liens (graphe visuel)...</p>
+    <div id="closeMembers" class="return-btn"><strong>Retour</strong></div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
