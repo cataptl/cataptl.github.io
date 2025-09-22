@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Phone</title>
+  <link rel="stylesheet" href="css/stylesPhone.css">
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- SECTION RECHERCHE -->
+    <section class="search-section">
+      <div class="search-box">
+        <input type="text" placeholder="Rechercher...">
+        <button>🔍</button>
+      </div>
+    </section>
+
+    <!-- SECTION IMAGES -->
+    <section class="images-section">
+        <div class="container">
+            <!-- Section 1 -->
+            <div class="section" id="section1" style="background-image: url('images/visual.jpeg');">
+            <div class="circle-text">
+                <svg viewBox="0 0 100 100">
+                <!-- Cercle -->
+                <circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="2"/>
+                <!-- Lettre centrale -->
+                <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="24px" font-weight="bold" font-family="Arial">P</text>
+                <!-- Texte autour du cercle en diagonale haut-gauche -->
+                <path id="path1" d="M20,50 A30,30 0 0,1 50,20" fill="none"/>
+                <text>
+                    <textPath href="#path1" startOffset="0%" font-family="Arial" fill="white" font-size="10">visuals</textPath>
+                </text>
+                </svg>
+            </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section" id="section2" style="background-image: url('images/AV.jpeg');">
+            <div class="circle-text">
+                <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="2"/>
+                <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="24px" font-weight="bold" font-family="Arial">R</text>
+                <path id="path2" d="M20,50 A30,30 0 0,1 50,20" fill="none"/>
+                <text>
+                    <textPath href="#path2" startOffset="0%" font-family="Arial" fill="white" font-size="10">audio-visuals</textPath>
+                </text>
+                </svg>
+            </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="section" id="section3" style="background-image: url('images/music.jpeg');">
+            <div class="circle-text">
+                <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="2"/>
+                <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="24px" font-weight="bold" font-family="Arial">G</text>
+                <path id="path3" d="M20,50 A30,30 0 0,1 50,20" fill="none"/>
+                <text>
+                    <textPath href="#path3" startOffset="0%" font-family="Arial" fill="white" font-size="10">music</textPath>
+                </text>
+                </svg>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- SECTION AUDIO-VISUAL -->
+    <section class="av-section">
+        <div class="av-container">
+            <!-- Visuals -->
+            <div class="av-slide" id="visuals-slide">
+            <img src="images/AV.png" alt="Visuals" class="av-image">
+            <p class="av-text">Projets visuels créatifs et audiovisuels.</p>
+            </div>
+
+            <!-- AV (centre) -->
+            <div class="av-slide" id="av-slide">
+            <img src="images/AV.png" alt="Audio-Visual" class="av-image">
+            <p class="av-text">Nous réalisons des projets audiovisuels innovants.</p>
+            </div>
+
+            <!-- Music -->
+            <div class="av-slide" id="music-slide">
+            <img src="images/music.jpeg" alt="Music" class="av-image">
+            <p class="av-text">Projets musicaux et sonores.</p>
+            </div>
+        </div>
+    </section>
+
+
+  </div>
+
+  <script src="js/scriptPhone.js"></script>
+</body>
+</html>
