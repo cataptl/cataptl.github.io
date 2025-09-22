@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.page-container {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth; /* garde le scroll fluide */
+}
+
+.search-section,
+.images-section,
+.av-section {
+  scroll-snap-align: start;        /* each section snaps to start */
+  height: 100vh;                   /* full viewport height */
+  width: 100vw;
+}
+
+/* SECTION RECHERCHE */
+.search-section {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.search-box input {
+  padding: 8px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+}
+
+.search-box button {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* SECTION IMAGES */
+.images-section {
+  background-color: #111;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.section {
+  position: relative;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* Cercle et texte au centre */
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+.circle-text svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Texte autour du cercle est en Arial */
+.circle-text textPath {
+  font-family: Arial;
+}
+
+
+
+/* SECTION AUDIO-VISUAL */
+.av-section {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* on bloque le scroll vertical sur la section AV elle-même */
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.av-container {
+  display: flex;
+  flex-direction: row;
+  width: 300vw; /* 3 sections de 100vw */
+  transition: transform 0.5s ease; /* effet glissement fluide */
+}
+
+.av-slide {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 50px;
+  text-align: center;
+  color: white;
+}
+
+.av-slide .av-image {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.av-slide .av-text {
+  max-width: 80%;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.av-section .av-image {
+  max-width: 21%;  /* image responsive */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.av-section .av-text {
+  max-width: 80%;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
