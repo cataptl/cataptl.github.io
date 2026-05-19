@@ -41,13 +41,25 @@ if (closes.members) closes.members.addEventListener('click', () => pages.members
 // -------------------------------
 // Redirection C + A + T + P + L
 // -------------------------------
+// -------------------------------
+// Raccourcis clavier secrets
+// -------------------------------
 let keysPressed = {};
+
 window.addEventListener('keydown', e => {
   keysPressed[e.key.toLowerCase()] = true;
-  if (['c','a','t','p','l'].every(k => keysPressed[k])) {
+
+  // C+A+T+P+L
+  if (['c', 'a', 't', 'p', 'l'].every(k => keysPressed[k])) {
     window.location.href = 'developer.html';
   }
+
+  // T+H+O+I+R+Y
+  if (['t', 'h', 'o', 'i', 'r', 'y'].every(k => keysPressed[k])) {
+    window.location.href = 'thoiry.html';
+  }
 });
+
 window.addEventListener('keyup', e => {
   keysPressed[e.key.toLowerCase()] = false;
 });
